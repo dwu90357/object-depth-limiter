@@ -31,3 +31,10 @@ Cycles (an object that references itself, directly or indirectly) are broken by 
 ## Awkward edge
 
 `maxDepth` must be a non-negative integer; anything else throws `TypeError`. If you pass `maxDepth` 0 expecting the root to be replaced entirely, that is not what happens — the root is always preserved (shallow-copied), only its children are replaced. If you need the root itself replaced, handle that at the call site.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
