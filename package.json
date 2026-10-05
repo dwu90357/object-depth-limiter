@@ -1,6 +1,6 @@
 {
   "name": "object-depth-limiter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Recursively copies an object down to a configurable maximum depth, replacing deeper nodes with a sentinel marker to prevent stack overflow in serializers.",
   "type": "module",
   "main": "src/index.js",
